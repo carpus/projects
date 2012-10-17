@@ -1,0 +1,23 @@
+<h1>Listing borads</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @borads.each do |borad| %>
+  <tr>
+    <td><%= borad.name %></td>
+    <td><%= link_to 'Show', borad %></td>
+    <td><%= link_to 'Edit', edit_borad_path(borad) %></td>
+    <td><%= link_to 'Destroy', borad, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Borad', new_borad_path %>
